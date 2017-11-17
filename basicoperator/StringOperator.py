@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 
-'''
-字符串操作
-'''
+
+# 字符串操作
+
 
 name = "zhao tong chen"
 # 索引
@@ -70,3 +70,9 @@ print name.isspace()
 li = ["hello", "world", "python"]
 str = " - "
 print str.join(li)
+
+# 原始字符串
+print "你\n好"
+print r"你\n好"
+# unicode 字符串
+print u"你\n好"
