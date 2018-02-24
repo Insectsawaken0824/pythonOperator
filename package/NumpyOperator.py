@@ -2,6 +2,9 @@
 
 # 导入NumPy函数库，一般都是用这样的形式(包括别名np，几乎是约定俗成的)
 import numpy as np
+# 导入时间库 和 数学库
+import time
+import math
 
 if __name__ == "__main__":
     # 标准Python的列表(list)中，元素本质是对象。
@@ -146,3 +149,20 @@ if __name__ == "__main__":
     i = np.array([True, False, True, False, False, True])
     print a[i]
     print a[i, 3]
+
+    print "------------------------numpy与Python数学库的时间比较------------------------"
+    # numpy与Python数学库的时间比较
+    for j in np.logspace(0, 7, 8):
+        x = np.linspace(0, 10, j)
+        start = time.clock()
+        y = np.sin(x)
+        t1 = time.clock() - start
+
+        x = x.tolist()
+        start = time.clock()
+        for i, t in enumerate(x):
+            x[i] = math.sin(t)
+        t2 = time.clock() - start
+        print j, ": ", t1, t2, t2/t1
+
+
